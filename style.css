@@ -1,0 +1,22 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+  }
+  input{
+    margin: 20px 30px;
+    padding: 10px;
+  }
+  .result {
+    margin-top: 20px;
+  }
+  .show_city {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 2px;
+  }
+  .css-th{
+    border: wheat 1px solid;
+    padding: 5px;
+    margin-right: 2px;
+  }

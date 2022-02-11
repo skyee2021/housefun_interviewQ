@@ -62,6 +62,15 @@ document.addEventListener('DOMContentLoaded', async() => {
     
   //搜尋功能
   var searchStyle = document.getElementById('search_style');
+  document.getElementById('search').addEventListener('keyup', function() {
+    if (!this.value) {
+      searchStyle.innerHTML = "";
+      return;
+    }
+  // look ma, no indexOf!
+  searchStyle.innerHTML = ".show_city:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
+  // beware of css injections!
+  });
   document.getElementById('search').addEventListener('input', function() {
     if (!this.value) {
       searchStyle.innerHTML = "";
@@ -71,6 +80,7 @@ document.addEventListener('DOMContentLoaded', async() => {
   searchStyle.innerHTML = ".show_city:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
   // beware of css injections!
   });
+  
 
 
   //自動填寫
@@ -78,6 +88,7 @@ document.addEventListener('DOMContentLoaded', async() => {
   new Awesomplete(document.getElementById('search'), {
     list: cityArea
   });
+  
   
 
 });
